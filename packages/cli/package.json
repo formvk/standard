@@ -1,6 +1,6 @@
 {
   "name": "@formvk/cli",
-  "version": "0.1",
+  "version": "0.0.1",
   "description": "Shared library for core",
   "license": "UNLICENSED",
   "type": "module",
