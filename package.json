@@ -1,6 +1,6 @@
 {
   "name": "formvk-standard",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "private": true,
   "description": "formvk standard project, based on formvk, includes build tools, eslint, prettier, and other tools",
   "type": "module",
@@ -9,16 +9,29 @@
   ],
   "scripts": {
     "build": "formvk build",
-    "version:major": "pnpm version major",
-    "version:minor": "pnpm version minor",
-    "version:patch": "pnpm version patch"
+    "build:cli": "pnpm -F @formvk/cli build:cli ",
+    "prepare": "pnpm run build:cli && husky install",
+    "release": "lerna publish from-package --yes --registry=https://registry.npmjs.org/",
+    "preversion": "pnpm i && npm run build && npm run lint",
+    "postversion": " pnpm run release",
+    "version:alpha": "lerna version prerelease --preid alpha",
+    "version:beta": "lerna version prerelease --preid beta",
+    "version:major": "lerna version major",
+    "version:minor": "lerna version minor",
+    "version:patch": "lerna version patch",
+    "version:preminor": "lerna version preminor --preid beta",
+    "version:rc": "lerna version prerelease --preid rc"
   },
   "devDependencies": {
     "@formvk/eslint-config": "workspace:*",
     "@formvk/prettier-config": "workspace:*",
     "eslint": "^8.57.0",
     "eslint-define-config": "^2.1.0",
+    "husky": "^8.0.3",
+    "lerna": "^8.1.3",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.3.0",
+    "pretty-quick": "^4.0.0",
     "typescript": "^5.4.5"
   }
 }

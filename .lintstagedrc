@@ -1,0 +1,4 @@
+{
+  "**/*.{ts,tsx,js,vue}": ["eslint --ext .ts", "pretty-quick --staged"],
+  "*.md": ["pretty-quick --staged"]
+}
