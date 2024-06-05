@@ -1,0 +1,24 @@
+{
+  "name": "formvk-standard",
+  "version": "0.0.2",
+  "private": true,
+  "description": "formvk standard project, based on formvk, includes build tools, eslint, prettier, and other tools",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "formvk build",
+    "version:major": "pnpm version major",
+    "version:minor": "pnpm version minor",
+    "version:patch": "pnpm version patch"
+  },
+  "devDependencies": {
+    "@formvk/eslint-config": "workspace:*",
+    "@formvk/prettier-config": "workspace:*",
+    "eslint": "^8.57.0",
+    "eslint-define-config": "^2.1.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.4.5"
+  }
+}
