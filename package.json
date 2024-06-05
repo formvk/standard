@@ -11,7 +11,7 @@
     "build": "formvk build",
     "build:cli": "pnpm -F @formvk/cli build:cli ",
     "prepare": "pnpm run build:cli && husky install",
-    "release": "lerna publish from-package --yes --registry=https://registry.npmjs.org/",
+    "release": "lerna publish from-package --yes",
     "preversion": "pnpm i && npm run build && npm run lint",
     "postversion": " pnpm run release",
     "version:alpha": "lerna version prerelease --preid alpha",
