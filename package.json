@@ -23,6 +23,7 @@
     "version:rc": "lerna version prerelease --preid rc"
   },
   "devDependencies": {
+    "@formvk/cli": "workspace:*",
     "@formvk/eslint-config": "workspace:*",
     "@formvk/prettier-config": "workspace:*",
     "eslint": "^8.57.0",
